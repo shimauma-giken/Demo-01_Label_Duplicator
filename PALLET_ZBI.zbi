@@ -1,0 +1,74 @@
+AUTONUM 10,10
+REM ************************************
+REM CLOSE ALL PORTS
+REM ************************************
+for i = 1 to 9 step 1
+   close #i
+   next i
+REM 
+REM ************************************  
+REM CLEAR MONITOR
+REM ************************************
+LET A = SETVAR("device.frontpanel.line1", "")
+LET A = SETVAR("device.frontpanel.line2", " ")
+LET A = SETVAR("device.frontpanel.line3", " ")
+LET A = SETVAR("device.frontpanel.line4", " ")
+REM 
+REM ************************************
+REM OPEN PORTS
+REM ************************************
+OPEN # 1 : NAME "ZPL"
+OPEN # 2 : NAME "BLU"
+REM OPEN # 3 : NAME "SER"
+REM 
+REM ************************************
+REM DECLARE CONSTANTS
+REM ************************************   
+LET ENDLINE$ = CHR$ ( 13 ) & CHR$ ( 10 )
+LET SCAN_ERROR$ = "ERROR: SCAN AGAIN!"
+LET DATA_ERROR$ = "INCORRECT DATA!"
+LET DECODE_ERROR$ = "DECODE ERROR: "
+LET ZPL_FILENAME$ = ""
+LET ZPL_EPC$ = ""
+LET ZPL_SERIAL$ = ""
+LET ZPL_PNAME$ = ""
+LET FILE_A$ = "DEMO.ZPL"
+REM LET FILE_B$ = "SNKL2535.ZPL"
+REM
+REM
+REM ************************************
+REM DECLARE ZPL OUTPUT CODES
+REM ************************************   
+REM
+LET PRINTZPLSTART$ = "^XA^XFE:"
+REM "Filename" is incerted here
+REM
+LET PRINTZPL1$ = "^FS^FN1^FD"
+REM FN1/"QR" is incerted here
+REM
+LET PRINTZPLEND$ = "^FS^XZ"
+REM 
+REM 
+REM ************************************  
+REM SCAN DATA
+REM ************************************  
+SUB BEFORESCAN
+LET SCANDATA$ = ""
+LET A = SETVAR("device.frontpanel.line1", "READY FOR SCAN.")
+INPUT # 2 : SCANDATA$
+REM 
+REM 
+REM ************************************
+REM SEND ZPL
+REM ************************************
+PRINT #1: PRINTZPLSTART$
+PRINT #1: FILE_A$
+PRINT #1: PRINTZPL1$
+PRINT #1: SCANDATA$
+PRINT #1: PRINTZPLEND$
+REM
+REM
+REM
+REM
+REM
+	GOTO BEFORESCAN
