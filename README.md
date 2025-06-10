@@ -40,10 +40,10 @@
 1. Zebra Bluetooth スキャナ
     | Bluetooth central設定ができるもの  
     eg. RS5100, CS6080 など
-1. Zebra Link-OS プリンタ
+1. Zebra Link-OS プリンタ  
     | Bluetooth Classic 接続ができるもの
     | 200dpi
-1. 3 x 1.75 inch / Black Mark ラベル
+1. 3 x 1.75 inch / Black Mark ラベル  
     ※ 後述するDEMO.ZPLの改変で様々なラベルサイズに対応が可能です。
 
 </br>
@@ -78,7 +78,7 @@
 
 1. Zebra Setup Utilityなどで下記ファイルをプリンタに送信します。
 
-    - PALLET_ZPL.prn
+    - PALLET_ZPL.zpl
     - PALLET_ZBI.prn
 
 1. ZBIのプログラムを実行します。
@@ -111,11 +111,11 @@
 
 1. スキャナにSuffix (CRLF)設定をする。下記バーコードを順番にスキャンする。
 
-    <img width="200" src="https://supportcommunity.zebra.com/servlet/rtaImage?eid=ka16S000000CUNW&feoid=00N0H00000K2Eou&refid=0EMi0000000kRBd">
+    <img width="200" src="https://supportcommunity.zebra.com/servlet/rtaImage?eid=ka16S000000CUNW&feoid=00N0H00000K2Eou&refid=0EMi0000000kRBd"></br>
+    
+    <img width="200" src="https://supportcommunity.zebra.com/servlet/rtaImage?eid=ka16S000000CUNW&feoid=00N0H00000K2Eou&refid=0EMi0000000kRBi"> </br>
 
-    <img width="200" src="https://supportcommunity.zebra.com/servlet/rtaImage?eid=ka16S000000CUNW&feoid=00N0H00000K2Eou&refid=0EMi0000000kRBi">
-
-    <img width="100" src="https://supportcommunity.zebra.com/servlet/rtaImage?eid=ka16S000000CUNW&feoid=00N0H00000K2Eou&refid=0EMi0000000kRBn">
+    <img width="100" src="https://supportcommunity.zebra.com/servlet/rtaImage?eid=ka16S000000CUNW&feoid=00N0H00000K2Eou&refid=0EMi0000000kRBn"></br>
 
     [引用：Enable a Carriage Return/Line Feed (Enter Key) Suffix after Every Scan](https://supportcommunity.zebra.com/s/article/How-dodr-every-scan-with-the-laser-scanners-when-attached-via-USB-or-Keyboard-Wedge?language=en_US)
 
